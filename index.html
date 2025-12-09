@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="符合WCAG 2.1 AA级标准的可访问性网页示例">
+    <title>可访问性网页示例 - WCAG 2.1 AA级标准</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 跳过导航链接 -->
+    <a href="#main-content" class="skip-link">跳过导航直接进入主要内容</a>
+    
+    <!-- 页眉区域 -->
+    <header role="banner" class="header">
+        <div class="container">
+            <h1 class="site-title">
+                <a href="#" aria-label="可访问性网页示例 - 返回首页">
+                    <span class="logo" aria-hidden="true">♿</span>
+                    可访问性网页示例
+                </a>
+            </h1>
+            
+            <!-- 主要导航 -->
+            <nav role="navigation" aria-label="主要导航" class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link">首页</a></li>
+                    <li><a href="#about" class="nav-link">关于我们</a></li>
+                    <li><a href="#services" class="nav-link">服务</a></li>
+                    <li><a href="#contact" class="nav-link">联系我们</a></li>
+                </ul>
+            </nav>
+            
+            <!-- 辅助功能工具栏 -->
+            <div class="accessibility-toolbar" role="toolbar" aria-label="辅助功能选项">
+                <button id="font-increase" class="toolbar-btn" aria-label="增大字体">A+</button>
+                <button id="font-decrease" class="toolbar-btn" aria-label="减小字体">A-</button>
+                <button id="high-contrast" class="toolbar-btn" aria-label="高对比度模式">高对比度</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main id="main-content" role="main" class="main-content">
+        <div class="container">
+            <!-- 英雄区域 -->
+            <section class="hero" aria-labelledby="hero-title">
+                <div class="hero-content">
+                    <h2 id="hero-title" class="hero-title">欢迎访问我们的可访问性网页</h2>
+                    <p class="hero-description">
+                        本网页完全符合WCAG 2.1 AA级标准，确保所有用户都能无障碍访问。
+                    </p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary" aria-describedby="primary-btn-desc">
+                            了解更多
+                        </button>
+                        <span id="primary-btn-desc" class="visually-hidden">点击此按钮了解更多关于可访问性的信息</span>
+                        <a href="#contact" class="btn btn-secondary">联系我们</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23333'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' fill='white' font-size='24'%3E可访问性插图%3C/text%3E%3C/svg%3E" 
+                         alt="可访问性插图，展示无障碍设计的理念" 
+                         class="hero-img">
+                </div>
+            </section>
+
+            <!-- 特性区域 -->
+            <section class="features" aria-labelledby="features-title">
+                <h2 id="features-title" class="section-title">可访问性特性</h2>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">🎨</div>
+                        <h3>适当的颜色对比度</h3>
+                        <p>所有文本与背景的对比度均达到4.5:1以上，确保视觉障碍用户能够清晰阅读。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">⌨️</div>
+                        <h3>完整的键盘导航</h3>
+                        <p>所有交互元素均可通过键盘访问，支持Tab键导航和Enter/Space键操作。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">📱</div>
+                        <h3>响应式设计</h3>
+                        <p>页面在200%缩放时无水平滚动，适配各种屏幕尺寸和设备类型。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">🔊</div>
+                        <h3>屏幕阅读器支持</h3>
+                        <p>完善的ARIA属性和语义化HTML，确保屏幕阅读器能够正确朗读内容。</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- 表单区域 -->
+            <section class="contact-form" aria-labelledby="form-title">
+                <h2 id="form-title" class="section-title">联系我们</h2>
+                <form id="contact-form" class="form" novalidate>
+                    <div class="form-group">
+                        <label for="name" class="form-label">姓名 <span class="required" aria-hidden="true">*</span></label>
+                        <input type="text" id="name" name="name" class="form-input" required 
+                               aria-required="true" aria-describedby="name-error">
+                        <span id="name-error" class="error-message" aria-live="polite"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">邮箱 <span class="required" aria-hidden="true">*</span></label>
+                        <input type="email" id="email" name="email" class="form-input" required 
+                               aria-required="true" aria-describedby="email-error">
+                        <span id="email-error" class="error-message" aria-live="polite"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject" class="form-label">主题</label>
+                        <select id="subject" name="subject" class="form-select">
+                            <option value="">请选择主题</option>
+                            <option value="general">一般咨询</option>
+                            <option value="accessibility">可访问性建议</option>
+                            <option value="feedback">反馈意见</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">消息 <span class="required" aria-hidden="true">*</span></label>
+                        <textarea id="message" name="message" class="form-textarea" rows="5" required 
+                                  aria-required="true" aria-describedby="message-error"></textarea>
+                        <span id="message-error" class="error-message" aria-live="polite"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="newsletter" name="newsletter" class="checkbox-input">
+                            <label for="newsletter" class="checkbox-label">
+                                我希望接收关于可访问性的最新资讯
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-submit">发送消息</button>
+                </form>
+            </section>
+
+            <!-- 信息表格区域 -->
+            <section class="data-table" aria-labelledby="table-title">
+                <h2 id="table-title" class="section-title">可访问性标准对比</h2>
+                <div class="table-container" role="region" aria-labelledby="table-title" tabindex="0">
+                    <table class="accessible-table" summary="不同可访问性标准之间的对比信息">
+                        <caption class="visually-hidden">WCAG不同级别标准的对比</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">标准级别</th>
+                                <th scope="col">颜色对比度要求</th>
+                                <th scope="col">键盘导航要求</th>
+                                <th scope="col">屏幕阅读器支持</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">WCAG A级</th>
+                                <td>3:1（大文本）</td>
+                                <td>基本键盘访问</td>
+                                <td>基本语义化</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">WCAG AA级</th>
+                                <td>4.5:1（正常文本）</td>
+                                <td>完整键盘导航</td>
+                                <td>完整ARIA支持</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">WCAG AAA级</th>
+                                <td>7:1（正常文本）</td>
+                                <td>高级键盘交互</td>
+                                <td>高级屏幕阅读器优化</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚区域 -->
+    <footer role="contentinfo" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>关于可访问性</h3>
+                    <p>我们致力于创建所有人都能平等访问的网页内容。</p>
+                </div>
+                <div class="footer-section">
+                    <h3>快速链接</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="#about">关于我们</a></li>
+                        <li><a href="#accessibility">可访问性声明</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>联系方式</h3>
+                    <address>
+                        <p>邮箱: <a href="mailto:info@example.com">info@example.com</a></p>
+                        <p>电话: <a href="tel:+861234567890">+86 123 4567 890</a></p>
+                    </address>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 可访问性网页示例. 遵循WCAG 2.1 AA级标准.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
